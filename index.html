@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hibat Allah Zoukkani Raddadi · Portfolio</title>
+  <meta name="description" content="Portfolio de proyectos de Hibat Allah Zoukkani Raddadi, estudiante de ASIR: sistemas, redes y robótica.">
+
+  <!-- Tipografías (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ CABECERA ============ -->
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#inicio">
+        <span class="brand__dot">HZ</span>
+        <span class="brand__name">Hibat Allah</span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+        <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+        <a href="#certificaciones" data-i18n="nav.certs">Certificaciones</a>
+        <a href="#estudios" data-i18n="nav.study">Lo que estudio</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <!-- Botones de idioma -->
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button type="button" data-lang="es" aria-pressed="true">ES</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ============ PORTADA ============ -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 data-i18n="hero.hello">Hola, soy Hibat Allah</h1>
+          <p class="hero__lead" data-i18n="hero.text">
+            Estudiante de ASIR. Aprendo construyendo: aquí reúno mis proyectos de sistemas, redes y robótica.
+          </p>
+          <div class="hero__buttons">
+            <a class="btn btn--solid" href="#proyectos" data-i18n="hero.btnProjects">Ver proyectos</a>
+            <a class="btn btn--line" href="#contacto" data-i18n="hero.btnContact">Contactar</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__circle" aria-hidden="true"></div>
+          <img class="hero__photo" src="images/hibat.jpg" alt="Hibat Allah Zoukkani Raddadi" width="454" height="535">
+
+          <!-- Tarjetas flotantes (decorativas) -->
+          <a class="float float--project" href="#proyectos">
+            <img src="images/dragonware-logo.png" alt="" width="44" height="44">
+            <span>
+              <small data-i18n="hero.chipProject">Proyecto destacado</small>
+              <strong>DragonWare</strong>
+            </span>
+          </a>
+          <a class="float float--cert" href="#certificaciones">
+            <img src="images/cisco-insignia.png" alt="" width="44" height="44">
+            <span>
+              <small data-i18n="hero.chipCert">Cisco Networking Academy</small>
+              <strong>CCNA</strong>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOBRE MÍ ============ -->
+    <section class="section about" id="sobre-mi">
+      <div class="container about__inner">
+        <div class="about__text reveal">
+          <h2 data-i18n="about.title">Sobre mí</h2>
+          <p data-i18n="about.p1">Soy estudiante de Administración de Sistemas Informáticos en Red (ASIR) con interés en la administración de sistemas, las redes y la ciberseguridad.</p>
+          <p data-i18n="about.p2">Me considero una persona responsable, organizada y con gran capacidad de aprendizaje. Disfruto resolviendo incidencias técnicas, trabajando en equipo y adquiriendo nuevos conocimientos relacionados con la informática y las tecnologías de la información.</p>
+          <p data-i18n="about.p3">Mi objetivo es seguir desarrollándome profesionalmente en el ámbito de los sistemas y las redes.</p>
+        </div>
+        <ul class="about__facts reveal">
+          <li><span data-i18n="about.f1k">Estudio</span><strong data-i18n="about.f1v">Grado Superior de ASIR · Digitech FP</strong></li>
+          <li><span data-i18n="about.f2k">Vivo en</span><strong>Torremolinos (Málaga)</strong></li>
+          <li><span data-i18n="about.f3k">Idiomas</span><strong data-i18n="about.f3v">Inglés y árabe (dariya)</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PROYECTOS ============ -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 data-i18n="projects.title">Proyectos</h2>
+          <p data-i18n="projects.intro">Cada proyecto cuenta qué hicimos, cómo lo probamos y qué aprendí.</p>
+        </header>
+
+        <!-- Filtros: se crean solos con las categorías de tus proyectos -->
+        <div class="filters" id="filters" hidden></div>
+
+        <!-- Las tarjetas se crean solas desde script.js -->
+        <div class="projects" id="projects"></div>
+      </div>
+    </section>
+
+    <!-- ============ CERTIFICACIONES ============ -->
+    <section class="section section--alt" id="certificaciones">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 data-i18n="certs.title">Certificaciones</h2>
+          <p data-i18n="certs.intro">Cursos y logros de Cisco Networking Academy.</p>
+        </header>
+        <div class="certs" id="certs"></div>
+      </div>
+    </section>
+
+    <!-- ============ LO QUE ESTOY ESTUDIANDO ============ -->
+    <section class="section" id="estudios">
+      <div class="container">
+        <header class="section__head reveal">
+          <h2 data-i18n="study.title">Lo que estoy estudiando</h2>
+          <p data-i18n="study.intro">Las áreas de ASIR en las que trabajo ahora mismo.</p>
+        </header>
+        <!-- Las tarjetas se crean solas desde script.js -->
+        <div class="study" id="study"></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACTO ============ -->
+    <section class="section contact" id="contacto">
+      <div class="container contact__inner">
+        <div class="contact__text reveal">
+          <h2 data-i18n="contact.title">¿Hablamos?</h2>
+          <p data-i18n="contact.text">Si quieres saber más sobre algún proyecto, escríbeme.</p>
+          <a class="btn btn--solid" href="mailto:hibat2117.zr@gmail.com" data-i18n="contact.btn">Enviar un correo</a>
+        </div>
+
+        <ul class="contact__list reveal">
+          <li>
+            <span data-i18n="contact.email">Correo</span>
+            <a href="mailto:hibat2117.zr@gmail.com">hibat2117.zr@gmail.com</a>
+          </li>
+          <li>
+            <span data-i18n="contact.phone">Teléfono</span>
+            <a href="tel:+34632531406">+34 632 53 14 06</a>
+          </li>
+          <li>
+            <span>LinkedIn</span>
+            <a href="https://www.linkedin.com/in/hiba-zoukkani-62a288443" target="_blank" rel="noopener">hiba-zoukkani</a>
+          </li>
+          <li>
+            <span data-i18n="contact.location">Ubicación</span>
+            Torremolinos (Málaga)
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 Hibat Allah Zoukkani Raddadi</div>
+  </footer>
+
+  <!-- ============ VENTANA DE PROYECTO (se rellena desde script.js) ============ -->
+  <dialog class="modal" id="modal" aria-labelledby="modal-title">
+    <button class="modal__close" id="modal-close" type="button" aria-label="Cerrar">×</button>
+    <div class="modal__body" id="modal-body"></div>
+  </dialog>
+
+  <!-- Código -->
+  <script src="script.js"></script>
+</body>
+</html>
